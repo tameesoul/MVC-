@@ -1,0 +1,19 @@
+{
+    "name": "ahmedtamee/project",
+    "autoload": {
+        "psr-4": {
+            "Ahmedtamee\\Project\\": "src/", 
+             "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ahmedtamee",
+            "email": "123337830+tameesoul@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "psr/container": "^2.0"
+    }
+}
