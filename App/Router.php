@@ -32,7 +32,6 @@ class Router
 
     public function resolve()
     {
-        dd($this->routes);
         $basePath = '/project/public';
          $uri = $_SERVER['REQUEST_URI'];
         $uri = strtok($uri, '?');

@@ -18,7 +18,8 @@ class Config
                     'host' => $env['DB_HOST'],
                     'user' => $env['DB_USERNAME'],
                     'password' => $env['DB_PASSWORD'],
-                    'dbname' => $env['DB_NAME']
+                    'dbname' => $env['DB_NAME'],
+                    'driver' => 'pdo_mysql',
             ]
         ];
     }

@@ -14,7 +14,9 @@ class HomeController
 
         $user =  new User;
 
-         $user->getAll();
+        //dd($user);
+
+          dd($user->getAll());
 
          return View::make('home/index',['user'=>$user]);
     }
