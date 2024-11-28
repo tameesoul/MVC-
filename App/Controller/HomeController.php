@@ -2,22 +2,30 @@
 namespace App\Controller;
 use App\Models\User;
 use App\View;
-
-
-
 use App\Attributes\Route;
 class HomeController 
 {
     #[Route('/', 'GET')]
     public function index()
     {
+        $user = new User;
+        // try{
 
-        $user =  new User;
+        //     $user->create([
+        //         'name'=>'ahmed tamer elsayed ghazy',
+        //         'phone'=>'0111000002233334',
+        //         'email'=>'ahmedtamerelsayed@gmail.com',
+        //     ]);
+        // }catch(PDOException $e)
+        // {
+        //     if($e->getCode() == "23000")
+        //     {
+        //         echo "email or phone has been used before";
+        //     }
+        // }
 
+      dd($user->where('name','ahmed')->first());
         //dd($user);
-
-          dd($user->getAll());
-
          return View::make('home/index',['user'=>$user]);
     }
 

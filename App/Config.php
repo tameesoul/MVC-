@@ -16,10 +16,13 @@ class Config
             'db'=>
             [
                     'host' => $env['DB_HOST'],
-                    'user' => $env['DB_USERNAME'],
+                    'username' => $env['DB_USERNAME'],
                     'password' => $env['DB_PASSWORD'],
-                    'dbname' => $env['DB_NAME'],
-                    'driver' => 'pdo_mysql',
+                    'database' => $env['DB_NAME'],
+                    'driver' => 'mysql',
+                    'charset' => 'utf8',
+                    'collation' => 'utf8_unicode_ci',
+                    'prefix' => '',
             ]
         ];
     }

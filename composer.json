@@ -18,6 +18,9 @@
         "symfony/mailer": "^7.1",
         "doctrine/dbal": "^4.2",
         "doctrine/orm": "^3.3",
-        "symfony/cache": "^7.1"
+        "symfony/cache": "^7.1",
+        "illuminate/database": "^11.34",
+        "illuminate/events": "^11.34",
+        "laravel/serializable-closure": "^2.0"
     }
 }
