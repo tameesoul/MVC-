@@ -8,27 +8,27 @@ class HomeController
     #[Route('/', 'GET')]
     public function index()
     {
-        $user = new User;
-        // try{
+        $handle = curl_init();
+    
+        $uri = 'https://api.emailable.com/v1/verify?email=tamerghazy@std.mans.edu.eg';
 
-        //     $user->create([
-        //         'name'=>'ahmed tamer elsayed ghazy',
-        //         'phone'=>'0111000002233334',
-        //         'email'=>'ahmedtamerelsayed@gmail.com',
-        //     ]);
-        // }catch(PDOException $e)
-        // {
-        //     if($e->getCode() == "23000")
-        //     {
-        //         echo "email or phone has been used before";
-        //     }
-        // }
+        curl_setopt($handle, CURLOPT_URL, $uri);
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($handle, CURLOPT_HTTPHEADER, [
+            'Authorization: Bearer test_017265a5bea968340b20', 
+        ]);
 
-      dd($user->where('name','ahmed')->first());
-        //dd($user);
-         return View::make('home/index',['user'=>$user]);
+        $response = curl_exec($handle);
+
+        if (curl_errno($handle)) {
+            dd('cURL Error: ' . curl_error($handle));
+        }
+    
+        curl_close($handle);
+
+        dd($response);
     }
-
+    
     public function upload()
     {
         $file = $_FILES['uploaded_file'];
